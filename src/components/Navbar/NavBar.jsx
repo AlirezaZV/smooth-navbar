@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
+import './navStyle.css';
 
 const navLinks = [
-  { icon: "mdi:dashboard", label: "صفحه اصلی", href: "#" },
-  { icon: "mdi:address-book", label: "منوي 2", href: "#" },
-  { icon: "mdi:widgets", label: "منوي 3", href: "#" },
-//   { icon: "mdi:calendar-month", label: "Calendar", href: "#" },
-//   { icon: "mdi:chart-bar", label: "Charts", href: "#" },
-//   { icon: "mdi:file-document-outline", label: "Documents", href: "#" },
+  { icon: "mdi:widgets", label: "فرآيندها", href: "#" },
+  { icon: "mdi:widgets", label: "داشبورد", href: "#" },
+  { icon: "mdi:widgets", label: "ربات‌ها", href: "#" },
 ];
 
-export default function Navbar() {
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function Navbar({activeNavTab}) {
+  
+  const [activeIndex, setActiveIndex] = useState(1);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
   const selectorRef = useRef(null);
@@ -22,13 +21,9 @@ export default function Navbar() {
     const selector = selectorRef.current;
 
     if (activeEl && selector) {
-      const rect = activeEl.getBoundingClientRect();
-      const parentRect = navRef.current.getBoundingClientRect();
-
       selector.style.top = `${activeEl.offsetTop}px`;
       selector.style.left = `${activeEl.offsetLeft}px`;
       selector.style.width = `${activeEl.offsetWidth}px`;
-    //   selector.style.height = `${activeEl.offsetHeight}px`;
     }
   };
 
@@ -41,30 +36,21 @@ export default function Navbar() {
 
   const handleNavClick = (index) => {
     setActiveIndex(index);
+    activeNavTab(index)
     updateSelector();
     if (window.innerWidth < 992) {
       setMenuOpen(false); // auto-close on mobile
     }
   };
 
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-    setTimeout(updateSelector, 300);
-  };
-
   return (
-    <nav className="navbar navbar-expand-custom navbar-mainbg">
-      <a className="navbar-brand navbar-logo" href="#">
-        Navbar test
-      </a>
-      <button
-        className="navbar-toggler"
-        type="button"
-        aria-label="Toggle navigation"
-        onClick={toggleMenu}
-      >
-        <Icon icon="mdi:menu" className="text-white" fontSize={24} />
-      </button>
+    <div className="main-header-layout">
+    {/* <p className="navbar-logo">
+      NOVIN 
+      <span className="logo-RPA">RPA</span>
+    </p> */}
+    <img src="/logo.svg" alt="Logo" className="navbar-logo" />
+  <nav className="navbar navbar-expand-custom navbar-mainbg">
       <div
         className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}
         id="navbarSupportedContent"
@@ -72,8 +58,8 @@ export default function Navbar() {
       >
         <ul className="navbar-nav ml-auto">
           <div className="hori-selector" ref={selectorRef}>
-            <div className="left" />
-            <div className="right" />
+            <div className="left"/>
+            <div className="right"/>
           </div>
           {navLinks.map((link, index) => (
             <li
@@ -91,5 +77,11 @@ export default function Navbar() {
         </ul>
       </div>
     </nav>
+        <div className="headers-icon-layout">
+      <div className="icon"><img width={50} src="/png/avatar.png"></img></div>
+      <div className="icon"><img width={50} src="/png/avatar.png"></img></div>
+      <div className="icon"></div>
+    </div>
+    </div>
   );
 }
