@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import './navStyle.css';
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const navLinks = [
-  { icon: "mdi:widgets", label: "فرآيندها", href: "#" },
-  { icon: "mdi:widgets", label: "داشبورد", href: "#" },
-  { icon: "mdi:widgets", label: "ربات‌ها", href: "#" },
+  { icon: "paths.svg", label: "فرآيندها", href: "/paths" },
+  { icon: "monitor.svg", label: "ربات‌ها", href: "/robots" },
+  { icon: "dashboard.svg", label: "داشبورد", href: "/dashboard" },
 ];
 
 export default function Navbar({activeNavTab}) {
@@ -15,6 +17,15 @@ export default function Navbar({activeNavTab}) {
   const navRef = useRef(null);
   const selectorRef = useRef(null);
   const itemRefs = useRef([]);
+
+  const { token, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
 
   const updateSelector = () => {
     const activeEl = itemRefs.current[activeIndex];
@@ -61,26 +72,40 @@ export default function Navbar({activeNavTab}) {
             <div className="left"/>
             <div className="right"/>
           </div>
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className={`nav-item ${index === activeIndex ? "active" : ""}`}
-              onClick={() => handleNavClick(index)}
-              ref={(el) => (itemRefs.current[index] = el)}
-            >
-              <a className="nav-link" href={link.href}>
-                <Icon icon={link.icon} fontSize={18} />
-                {link.label}
-              </a>
-            </li>
-          ))}
+        {navLinks.map((link, index) => (
+          <li
+            key={index}
+            className={`nav-item ${index === activeIndex ? "active" : ""}`}
+            onClick={() => handleNavClick(index)}
+            ref={(el) => (itemRefs.current[index] = el)}
+          >
+            {/* <a className="nav-link" href={link.href} >  */}
+            <Link to={link.href}>
+      <div className="nav-item-inner">
+        <img
+          src={`/icons/${link.icon}`}
+          alt={link.label}
+          width={25}
+          className="nav-icon"
+        />
+
+        <span className="nav-label">{link.label}</span>
+      </div>
+            {/* </a> */}
+            </Link>
+          </li>
+        ))}
+
         </ul>
       </div>
     </nav>
         <div className="headers-icon-layout">
-      <div className="icon"><img width={50} src="/png/avatar.png"></img></div>
-      <div className="icon"><img width={50} src="/png/avatar.png"></img></div>
-      <div className="icon"></div>
+      <div className="icon"><img width={30} src="/icons/notifications.svg"></img></div>
+      <div className="icon"><img width={30} src="/icons/settings.svg"></img></div>
+      
+      <div className="icon" onClick={handleLogout}>
+      <img width={45} src="/png/avatar.png"></img>
+      </div>
     </div>
     </div>
   );

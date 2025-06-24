@@ -6,14 +6,16 @@
     gap: 10px;
 	align-items:center
 }
+
 .headers-icon-layout{
     display: flex;
     flex-direction:row;
     gap: 5px
 }
+
 .icon {
-    width: 60px;
-    height: 60px;
+    width: 55px;
+    height: 55px;
     background-color: #ffffff;
     border-radius: 50%;
     box-shadow: 5px 5px 5px #eee;
@@ -21,16 +23,23 @@
     align-items: center;
     justify-content: center;
 }
+
 .icon img {
     display: block;
-    width: 50px;
-    height: 50px;
 }
 
 .navbar-logo{
 	color: #fa4616;
-    height: 60px;
+    height: 55px;
 	font-weight: bolder;
+}
+
+.nav-item-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .logo-RPA{
@@ -45,31 +54,36 @@
 	background-color: #fff;
 	border-radius: 35px;
 	min-width: 800px;
-	max-height: 60px;
+	max-height: 55px;
 	box-shadow: 5px 5px 5px #eee;
 }
+
 #navbarSupportedContent{
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
   	justify-content:center
 }
+
 #navbarSupportedContent ul{
 	padding: 0px;
-	margin: 0px;
+	margin-top:-15px;
 }
+
 #navbarSupportedContent ul li a i{
 	margin-right: 10px;
 }
+
 #navbarSupportedContent li {
 	list-style-type: none;
 	float: left;
 }
+
 #navbarSupportedContent ul li a{
 	color: #616161;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 10px;
     display: block;
-    padding: 20px 20px;
+    padding: 20px 40px;
     transition-duration:0.6s;
 	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
@@ -78,6 +92,7 @@
 	color: #fa4616;
 	background-color: transparent;
 	transition: all 0.7s;
+	font-size: 15px;
 }
 #navbarSupportedContent a:not(:only-child):after {
 	content: "\f105";
@@ -98,9 +113,9 @@
 .hori-selector{
 	display:inline-block;
 	position:absolute;
-	height: 100%;
-	top: 0px;
-	left: 0px;
+	height: 81%;
+	top: -15px;
+	left: 100px;
 	transition-duration:0.6s;
 	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 	background-color: #f1eeec;
@@ -115,7 +130,7 @@
 	width: 25px;
 	height: 25px;
 	background-color: #f1eeec;
-	bottom: 16px;
+	bottom: 1px;
 }
 .hori-selector .right{
 	right: -25px;
