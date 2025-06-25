@@ -56,12 +56,17 @@ export default function Navbar({activeNavTab}) {
 
   return (
     <div className="main-header-layout">
-    {/* <p className="navbar-logo">
-      NOVIN 
-      <span className="logo-RPA">RPA</span>
-    </p> */}
-    <img src="/logo.svg" alt="Logo" className="navbar-logo" />
+
+      <div className="headers-icon-layout">
+        <div className="icon" onClick={handleLogout}>
+        <img width={45} src="/png/avatar.png"></img>
+        </div>
+        <div className="icon"><img width={30} src="/icons/settings.svg"></img></div>
+        <div className="icon"><img width={30} src="/icons/notifications.svg"></img></div>
+      </div>
+
   <nav className="navbar navbar-expand-custom navbar-mainbg">
+
       <div
         className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`}
         id="navbarSupportedContent"
@@ -99,14 +104,7 @@ export default function Navbar({activeNavTab}) {
         </ul>
       </div>
     </nav>
-        <div className="headers-icon-layout">
-      <div className="icon"><img width={30} src="/icons/notifications.svg"></img></div>
-      <div className="icon"><img width={30} src="/icons/settings.svg"></img></div>
-      
-      <div className="icon" onClick={handleLogout}>
-      <img width={45} src="/png/avatar.png"></img>
-      </div>
-    </div>
+        <img src="/logo.svg" alt="Logo" className="navbar-logo" />
     </div>
   );
 }

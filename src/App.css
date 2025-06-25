@@ -1,7 +1,12 @@
+:root {
+  --box-shadow-base: 5px 5px 5px #FA461605;
+}
 body{
 	font-family: 'Ravi', sans-serif;
-  	/* background-image: linear-gradient(to top, #e9865890, transparent); */
+  background-image: radial-gradient(#e9865870 5%, transparent 70%);
 	background-color: #F2F2F2;
+  height: 1080px;
+  direction: rtl;
 }
 * {
 	margin: 0;
@@ -15,7 +20,7 @@ i {
 }
 .blured-curcle-bg {
   width: 800px;
-  /* position: absolute; */
+  position: absolute;
   height: 800px;
   background-color: #FA461670;
   border-radius: 50%;
@@ -46,7 +51,7 @@ i {
     width: 78em;
     margin: 40px auto; /* Center horizontally */
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 .left-panel {
@@ -55,7 +60,7 @@ i {
     padding: 20px;
     box-sizing: border-box;
     border-radius: 25px;
-    box-shadow: 5px 5px 5px #eee;
+    box-shadow: var(--box-shadow-base);
 }
 
 .right-panel {
@@ -64,5 +69,5 @@ i {
     border-radius: 25px;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: 5px 5px 5px #eee;
+    box-shadow: var(--box-shadow-base);
 }

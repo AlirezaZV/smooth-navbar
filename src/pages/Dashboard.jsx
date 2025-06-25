@@ -18,7 +18,7 @@ function Dashboard() {
         <div>
             <div class="dashboard-main">
                 <div className="right-panel">گزارش‌های امروز</div>
-                <div className="left-panel">ربات شماره 1</div>
+                <div className="left-panel">داشبورد شماره 1</div>
             </div>
         </div>
     </PageWrapper>

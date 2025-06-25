@@ -51,7 +51,7 @@ function LayoutWrapper() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       
-      <div className="blured-curcle-bg"/>
+      {/* <div className="blured-curcle-bg"/> */}
       </div>
     </>
     

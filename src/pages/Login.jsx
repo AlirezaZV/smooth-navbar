@@ -19,19 +19,20 @@ export default function Login() {
       login(token);
       navigate("/"); // 👈 redirect to `/` (robots)
     } catch (err) {
-      setError("Login failed.");
+      setError("ورود ناموفق بود! لطفا اطلاعات رو دوباره بررسي كنيد.");
     }
   };
 
   return (
     <div className="login-container">
+      <img className="logo-login" src="/logo.svg"></img>
       <form onSubmit={handleSubmit} className="login-form">
         <h2>ورود</h2>
         {error && <div className="error">{error}</div>}
         <input
           type="text"
-          name="نام كاربري"
-          placeholder="Username"
+          name="username"
+          placeholder="نام كاربري"
           onChange={(e) => setForm({ ...form, username: e.target.value })}
         />
         <input
