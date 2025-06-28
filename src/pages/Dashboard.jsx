@@ -1,28 +1,30 @@
-import '../App.css'
+import "../App.css";
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import PageWrapper from "../components/PageWrapper";
 
 function Dashboard() {
-
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    api.get("/profile").then(res => setProfile(res.data)).catch(() => {
-      console.error("Unauthorized");
-    });
+    api
+      .get("/profile")
+      .then((res) => setProfile(res.data))
+      .catch(() => {
+        console.error("Unauthorized");
+      });
   }, []);
 
   return (
     <PageWrapper>
-        <div>
-            <div class="dashboard-main">
-                <div className="right-panel">گزارش‌های امروز</div>
-                <div className="left-panel">داشبورد شماره 1</div>
-            </div>
+      <div>
+        <div class="dashboard-main">
+          <div className="right-panel">گزارش‌های امروز</div>
+          <div className="left-panel">داشبورد شماره 1</div>
         </div>
+      </div>
     </PageWrapper>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

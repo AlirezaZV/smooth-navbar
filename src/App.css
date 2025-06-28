@@ -1,73 +1,19 @@
+@import url(./style/pagesStyle.css);
+@import url(./style//Login.css);
+@import url(./style/navStyle.css);
+@import url(./style/bots.css);
+
 :root {
-  --box-shadow-base: 5px 5px 5px #FA461605;
+  --box-shadow-base: 5px 5px 5px #fa461605;
 }
-body{
-	font-family: 'Ravi', sans-serif;
+body {
   background-image: radial-gradient(#e9865870 5%, transparent 70%);
-	background-color: #F2F2F2;
+  background-color: #f2f2f2;
   height: 1080px;
   direction: rtl;
 }
 * {
-	margin: 0;
-	padding: 0;
-}
-i {
-	margin-right: 10px;
-}
-.header{
-	margin-top: 20px;
-}
-.blured-curcle-bg {
-  width: 800px;
-  position: absolute;
-  height: 800px;
-  background-color: #FA461670;
-  border-radius: 50%;
-  filter: blur(1000px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* animation: moveCircle 10s infinite; */
-}
-
-@keyframes moveCircle {
-  0% {
-    left: 0%;
-  }
-  33% {
-    left: 100%;
-  }
-  66% {
-    left: 100%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-
-.dashboard-main {
-    height: 500px;
-    width: 78em;
-    margin: 40px auto; /* Center horizontally */
-    display: flex;
-    gap: 20px;
-}
-
-.left-panel {
-    width: 20%;
-    background-color: #ffffff90;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 25px;
-    box-shadow: var(--box-shadow-base);
-}
-
-.right-panel {
-    width: 80%;
-    background-color: #ffffff90;
-    border-radius: 25px;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: var(--box-shadow-base);
+  margin: 0;
+  padding: 0;
+  font-family: "IRANSansWeb(FaNum)";
 }

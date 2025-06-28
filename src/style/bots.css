@@ -1,0 +1,299 @@
+/* Main container for the robot card */
+
+.robots-main {
+  height: 700px;
+  width: 78em;
+  margin: 40px auto;
+  display: flex;
+  gap: 20px;
+}
+
+.robots-left {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.robots-left-top,
+.robots-left-bottom {
+  background-color: #ffffff90;
+  height: 400;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: var(--box-shadow-base);
+  flex: 1;
+  box-sizing: border-box;
+}
+.robots-right {
+  width: 20%;
+  background-color: #ffffff90;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: var(--box-shadow-base);
+  box-sizing: border-box;
+}
+
+.robot-card {
+  height: 62px;
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  border: 1px dashed #fa461650;
+}
+
+.robot-card:hover {
+  background: #fa461630;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 1px solid #fa4616;
+}
+
+/* Background for the robot card */
+.robot-background {
+  height: 62px;
+  opacity: 0.2;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Status badge */
+.robot-status {
+  padding: 1px 8px;
+  position: absolute;
+  left: 8px;
+  top: 32px;
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: rgba(84, 214, 44, 0.16); /* Default: Green for available */
+}
+
+.robot-status[data-state-id="1"] {
+  background: rgba(84, 214, 44, 0.16); /* Green for available */
+}
+
+.robot-status[data-state-id="0"] {
+  background: rgba(255, 0, 0, 0.16); /* Red for unavailable */
+}
+
+/* Text inside the status badge */
+.status-text {
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  word-wrap: break-word;
+  color: #229a16; /* Default: Green for available */
+}
+
+.robot-status[data-state-id="0"] .status-text {
+  color: #ff0000; /* Red for unavailable */
+}
+
+/* Processes text */
+.robot-processes {
+  cursor: pointer;
+  position: absolute;
+  padding-right: 10px;
+  top: 32px;
+  text-align: right;
+  color: #616161;
+  font-size: 14px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Robot name */
+.robot-name {
+  position: absolute;
+  padding-right: 10px;
+  top: 6px;
+  text-align: right;
+  color: #616161;
+  font-size: 14px;
+  font-weight: 900;
+  word-wrap: break-word;
+}
+
+/* Main Container */
+.robots-reports-cards {
+  width: 921px;
+  height: 400px;
+  position: relative;
+  border-radius: 16px;
+}
+
+/* Header */
+.robots-reports-header {
+  position: absolute;
+  left: 791px;
+  top: 40px;
+  color: #212b36;
+  font-size: 18px;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+/* Card Styles */
+.robots-reports-card {
+  width: 189px;
+  height: 96px;
+  position: absolute;
+  background: white;
+  box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.failed-card {
+  left: 732px;
+  top: 302px;
+  background: linear-gradient(
+    152deg,
+    rgba(255, 233, 213, 0.48) 0%,
+    rgba(255, 172, 130, 0.48) 100%
+  );
+}
+
+.waiting-card {
+  left: 732px;
+  top: 196px;
+  background: linear-gradient(
+    152deg,
+    rgba(255, 245, 204, 0.48) 0%,
+    rgba(255, 214, 102, 0.48) 100%
+  );
+}
+
+.success-card {
+  left: 732px;
+  top: 89px;
+  background: linear-gradient(
+    152deg,
+    rgba(200, 250, 214, 0.48) 0%,
+    rgba(91, 228, 155, 0.48) 100%
+  );
+}
+
+/* Card Number */
+.robots-reports-number {
+  position: absolute;
+  left: 17px;
+  top: 27px;
+  color: inherit;
+  font-size: 24px;
+  font-weight: 900;
+  word-wrap: break-word;
+}
+
+.failed-card .robots-reports-number,
+.failed-card .robots-reports-text {
+  color: #7a0916;
+}
+
+.waiting-card .robots-reports-number,
+.waiting-card .robots-reports-text {
+  color: #7a4100;
+}
+
+.success-card .robots-reports-number,
+.success-card .robots-reports-text {
+  color: #004b50;
+}
+
+/* Card Text */
+.robots-reports-text {
+  position: absolute;
+  left: 17px;
+  top: 60px;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Card Icon */
+.robots-reports-icon {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  left: 123px;
+  top: 29px;
+}
+
+/* Content Styles */
+.robots-reports-content {
+  width: 712px;
+  height: 400px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 12px 24px -4px rgba(145, 158, 171, 0.12);
+  border-radius: 16px;
+}
+
+.robots-reports-content-header {
+  width: 712px;
+  height: 78px;
+  padding: 24px;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.robots-reports-title {
+  color: #212b36;
+  font-size: 18px;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.robots-reports-subtitle {
+  color: #637381;
+  font-size: 14px;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Legend Styles */
+.robots-reports-legend {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 12px;
+}
+
+.robots-reports-legend-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.robots-reports-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 7px;
+}
+
+.robots-reports-legend-color.completed {
+  background: #00ab55;
+}
+
+.robots-reports-legend-color.incomplete {
+  background: #ffe700;
+}
+
+.robots-reports-legend-label {
+  color: #212b36;
+  font-size: 13px;
+  font-weight: 400;
+  word-wrap: break-word;
+}

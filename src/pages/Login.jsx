@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { loginUser } from "../services/auth";
 import { useAuth } from "../context/AuthContext";
-import "./Login.css"; // CSS file you'll create
 
 export default function Login() {
   const navigate = useNavigate();
