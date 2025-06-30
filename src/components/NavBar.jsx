@@ -41,10 +41,32 @@ export function BotsIcon(props) {
   );
 }
 
+export function PathsIcon(props) {
+  return (
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 23 23"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13 19.1L20 19.1M2 19.1L9 19.1M11 16.25V14.35"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M5 7.7H18M5 7.7C3.34315 7.7 2 6.42401 2 4.85C2 3.27599 3.34315 2 5 2H18C19.6569 2 21 3.27599 21 4.85C21 6.42401 19.6569 7.7 18 7.7M5 7.7C3.34315 7.7 2 8.97599 2 10.55C2 12.124 3.34315 13.4 5 13.4H18C19.6569 13.4 21 12.124 21 10.55C21 8.97599 19.6569 7.7 18 7.7M11 21C9.89543 21 9 20.1493 9 19.1C9 18.0507 9.89543 17.2 11 17.2C12.1046 17.2 13 18.0507 13 19.1C13 20.1493 12.1046 21 11 21Z"
+        stroke-width="1.8"
+      />
+    </svg>
+  );
+}
+
 const navLinks = [
-  { icon: <DashboardIcon />, label: "فرآيندها", href: "/paths" },
-  { icon: <DashboardIcon />, label: "ربات‌ها", href: "/robots" },
-  { icon: <DashboardIcon />, label: "داشبورد", href: "/dashboard" },
+  { icon: 0, label: "فرآيندها", href: "/paths" },
+  { icon: 1, label: "ربات‌ها", href: "/robots" },
+  { icon: 2, label: "داشبورد", href: "/dashboard" },
 ];
 
 export default function Navbar({ activeNavTab }) {
@@ -136,16 +158,11 @@ export default function Navbar({ activeNavTab }) {
                 {/* <a className="nav-link" href={link.href} >  */}
                 <Link to={link.href}>
                   <div className="nav-item-inner">
-                    {/* <img
-                      src={`/icons/${link.icon}`}
-                      alt={link.label}
-                      width={25}
-                      className="nav-icon"
-                    /> */}
-                    <BotsIcon />
+                    {link.icon === 0 && <PathsIcon />}
+                    {link.icon === 1 && <BotsIcon />}
+                    {link.icon === 2 && <DashboardIcon />}
                     <span className="nav-label">{link.label}</span>
                   </div>
-                  {/* </a> */}
                 </Link>
               </li>
             ))}
