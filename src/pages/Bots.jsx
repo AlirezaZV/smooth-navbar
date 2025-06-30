@@ -3,46 +3,51 @@ import { useEffect, useState } from "react";
 import api from "../services/api";
 import PageWrapper from "../components/PageWrapper";
 import BotsReport from "../components/BotsReport";
+import { useNavigate } from "react-router";
 
 function Bots() {
-  const [profile, setProfile] = useState(null);
+  const [botsList, setBotsList] = useState([]);
   const [activerobot, setActiveRobot] = useState(null);
+  const navigate = useNavigate();
+
   useEffect(() => {
     api
       .post("/robotList")
-      .then((res) => setProfile(res.data))
-      .catch(() => {
-        console.error("Unauthorized");
+      .then((res) => setBotsList(res.data.robots))
+      .catch((err) => {
+        navigate("/login");
       });
   }, []);
-  const jsonRobots = [
-    {
-      robotId: 1,
-      robotName: "Robot 1",
-      robotState: "Available",
-      robotStateId: 1,
-    },
-    {
-      robotId: 2,
-      robotName: "Robot 2",
-      robotState: "Available",
-      robotStateId: 0,
-    },
-  ];
+  // const jsonRobots = [
+  //   {
+  //     robotId: 1,
+  //     robotName: "Robot 1",
+  //     robotState: "Available",
+  //     robotStateId: 1,
+  //   },
+  //   {
+  //     robotId: 2,
+  //     robotName: "Robot 2",
+  //     robotState: "Available",
+  //     robotStateId: 0,
+  //   },
+  // ];
   return (
     <PageWrapper>
       <div className="robots-main">
         <div className="robots-right">
-          {jsonRobots.map((robot) => (
+          {botsList.map((robot) => (
             <div
-              class="robot-card"
               data-property-1="Default"
               key={robot.robotId}
+              className={`robot-card ${
+                activerobot === robot.robotId ? "robot-card-active" : ""
+              }`}
               onClick={() => setActiveRobot(robot.robotId)}
             >
-              <div class="robot-background"></div>
+              <div className="robot-background"></div>
               <div
-                class="robot-status"
+                className="robot-status"
                 data-state-id="1"
                 style={{
                   background:
@@ -52,7 +57,7 @@ function Bots() {
                 }}
               >
                 <div
-                  class="status-text"
+                  className="status-text"
                   style={{
                     color: robot.robotStateId === 1 ? "#229A16" : "#FF0000",
                   }}
@@ -60,8 +65,8 @@ function Bots() {
                   {robot.robotStateId === 1 ? "آزاد" : "مشغول"}
                 </div>
               </div>
-              <div class="robot-processes">فرآيندها: - از -</div>
-              <div class="robot-name">{robot.robotName}</div>
+              <div className="robot-processes">فرآيندها: - از -</div>
+              <div className="robot-name">{robot.robotName}</div>
             </div>
           ))}
         </div>
@@ -74,7 +79,7 @@ function Bots() {
               </PageWrapper>
             )}
           </div>
-          <div className="robots-left-bottom">3</div>
+          <div className="robots-left-bottom"></div>
         </div>
       </div>
     </PageWrapper>

@@ -69,7 +69,7 @@ const navLinks = [
   { icon: 2, label: "داشبورد", href: "/dashboard" },
 ];
 
-export default function Navbar({ activeNavTab }) {
+export default function Navbar() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef(null);
@@ -116,7 +116,6 @@ export default function Navbar({ activeNavTab }) {
 
   const handleNavClick = (index) => {
     setActiveIndex(index);
-    activeNavTab(index);
     updateSelector();
     if (window.innerWidth < 992) {
       setMenuOpen(false); // auto-close on mobile
