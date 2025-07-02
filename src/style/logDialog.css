@@ -114,36 +114,6 @@
   border-radius: 8px;
 }
 
-.process-dialog-filter-text {
-  position: absolute;
-  top: 7px;
-  left: 36px;
-  font-size: 15px;
-  font-family: "IRANSansWeb";
-  font-weight: 400;
-  text-align: right;
-  color: #919eab;
-}
-
-.process-dialog-filter-border {
-  position: absolute;
-  width: 203px;
-  height: 35px;
-  border-radius: 8px;
-  border: 1px solid rgba(145, 158, 171, 0.2);
-}
-
-.process-dialog-filter-arrow {
-  position: absolute;
-  top: 20px;
-  left: 23px;
-  width: 11px;
-  height: 5px;
-  background: #919eab;
-  transform: rotate(180deg);
-  transform-origin: top left;
-}
-
 .process-dialog-box-info {
   position: absolute;
   left: 15px;

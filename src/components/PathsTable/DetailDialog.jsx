@@ -63,30 +63,6 @@ export default function DetailDialog({ selectedRow, onClose }) {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="process-dialog-container">
-            <div className="process-dialog-search-bar">
-              <div className="process-dialog-search-icon">
-                <div className="process-dialog-icon-inner" />
-              </div>
-              <div className="process-dialog-search-text-wrap">
-                <div className="process-dialog-search-text">جستجو...</div>
-              </div>
-              <div className="process-dialog-search-border" />
-            </div>
-            <div className="process-dialog-filter-bar">
-              <div className="process-dialog-filter-text">
-                نمايش بر اساس عملكردها
-              </div>
-              <div className="process-dialog-filter-border" />
-              <div className="process-dialog-filter-arrow" />
-            </div>
-
-            {/* <div className="process-dialog-note process-dialog-note-red">
-              <div className="process-dialog-note-text">
-                شماره سریال های زیر به صورت خودکار ثبت نگردید: (تاریخ شروع
-                گارانتی مغایرت دارد. تفصیل مشتری مغایرت دارد.)
-              </div>
-              <div className="process-dialog-note-dot" />
-            </div> */}
             <div className="process-dialog-bg2" />
             <div className="process-dialog-box-info">
               <div className="process-dialog-chip">
