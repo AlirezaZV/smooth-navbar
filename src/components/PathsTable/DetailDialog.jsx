@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function CloseIcon(props) {
   return (
@@ -49,8 +50,14 @@ export default function DetailDialog({ selectedRow, onClose }) {
       });
   }, []);
   return (
-    <>
-      <div className="process-dialog-overlay" onClick={onClose}>
+    <AnimatePresence>
+      <motion.div
+        className="process-dialog-overlay"
+        onClick={onClose}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         <div
           className="process-dialog-box"
           onClick={(e) => e.stopPropagation()}
@@ -113,7 +120,7 @@ export default function DetailDialog({ selectedRow, onClose }) {
             <div className="process-dialog-bg1" />
           </div>
         </div>
-      </div>
-    </>
+      </motion.div>
+    </AnimatePresence>
   );
 }
