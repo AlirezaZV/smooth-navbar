@@ -4,9 +4,30 @@
 @import url(./style/bots.css);
 @import url(./style/paths.css);
 @import url(./style/commingSoon.css);
+@import url(./style/logDialog.css);
 
 :root {
   --box-shadow-base: 5px 5px 5px #fa461605;
+  /* Colors */
+  --color-gray: #637381;
+  --color-primary: #fa4616;
+  --color-dark: #1c252e;
+
+  /* Border radius */
+  --radius-base: 25px;
+
+  /* Background gradients */
+  --gradient-bg: linear-gradient(
+    90deg,
+    rgba(242, 239, 238, 0.5) 0%,
+    rgba(243, 219, 212, 0.5) 100%
+  );
+
+  --gradient-hover: linear-gradient(
+    90deg,
+    rgba(250, 70, 22, 0.5) 0%,
+    rgba(242, 239, 238, 0.5) 80%
+  );
 }
 body {
   background-image: radial-gradient(#e9865870 5%, transparent 70%);

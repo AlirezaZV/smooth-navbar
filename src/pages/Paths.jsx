@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import api from "../services/api";
 import PageWrapper from "../components/PageWrapper";
 import { useNavigate } from "react-router";
+import PathsTable from "../components/PathsTable/PathsTable";
 
 function Paths() {
   const [pathsLists, setPathsLists] = useState([]);
@@ -43,7 +44,13 @@ function Paths() {
         </div>
 
         <div className="paths-left">
-          <div className="paths-left-top"></div>
+          <div className="paths-left-top">
+            {activePathList && (
+              <PageWrapper>
+                <PathsTable activePath={activePathList} />
+              </PageWrapper>
+            )}
+          </div>
           <div className="paths-left-bottom"></div>
         </div>
       </div>

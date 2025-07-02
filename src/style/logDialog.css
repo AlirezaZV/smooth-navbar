@@ -1,0 +1,306 @@
+.process-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(78, 23, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.7) 68%
+  );
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition-duration: 0.5s;
+}
+
+.process-dialog-box {
+  background: white;
+  border-radius: 16px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.5s;
+}
+
+.process-dialog-container {
+  position: relative;
+  width: 722px;
+  height: 598px;
+  background: white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.process-dialog-bg1 {
+  position: absolute;
+  top: 462px;
+  left: -2px;
+  width: 649px;
+  height: 136px;
+  background: radial-gradient(
+    ellipse 102.71% 102.71% at 0% 100%,
+    rgba(255, 86, 48, 0.1) 0%,
+    rgba(255, 86, 48, 0) 100%
+  );
+}
+
+.process-dialog-search-bar {
+  position: absolute;
+  top: 55px;
+  left: 15px;
+  width: 193px;
+  height: 35px;
+  border-radius: 8px;
+}
+
+.process-dialog-search-icon {
+  position: absolute;
+  left: 8px;
+  top: 7px;
+  width: 20px;
+  height: 20px;
+}
+
+.process-dialog-icon-inner {
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 15px;
+  height: 15px;
+  background: #919eab;
+}
+
+.process-dialog-search-text-wrap {
+  position: absolute;
+  top: 0;
+  left: 42px;
+  width: 151px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.process-dialog-search-text {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 137px;
+  height: 21px;
+  font-size: 15px;
+  font-family: "IRANSansWeb";
+  font-weight: 400;
+  text-align: right;
+  color: #919eab;
+}
+
+.process-dialog-search-border {
+  position: absolute;
+  width: 193px;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid rgba(145, 158, 171, 0.2);
+}
+
+.process-dialog-filter-bar {
+  position: absolute;
+  top: 55px;
+  left: 222px;
+  width: 202px;
+  height: 35px;
+  border-radius: 8px;
+}
+
+.process-dialog-filter-text {
+  position: absolute;
+  top: 7px;
+  left: 36px;
+  font-size: 15px;
+  font-family: "IRANSansWeb";
+  font-weight: 400;
+  text-align: right;
+  color: #919eab;
+}
+
+.process-dialog-filter-border {
+  position: absolute;
+  width: 203px;
+  height: 35px;
+  border-radius: 8px;
+  border: 1px solid rgba(145, 158, 171, 0.2);
+}
+
+.process-dialog-filter-arrow {
+  position: absolute;
+  top: 20px;
+  left: 23px;
+  width: 11px;
+  height: 5px;
+  background: #919eab;
+  transform: rotate(180deg);
+  transform-origin: top left;
+}
+
+.process-dialog-box-info {
+  position: absolute;
+  left: 15px;
+  width: 692px;
+  padding: 10px;
+  background: rgba(145, 158, 171, 0.16);
+  border-radius: 6px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.process-dialog-box-info {
+  top: 150px;
+  height: 150px;
+}
+
+.process-dialog-chip {
+  position: relative;
+  width: 70px;
+  height: 23px;
+}
+
+.process-dialog-chip-bg {
+  position: absolute;
+  width: 70px;
+  height: 23px;
+  background: white;
+  border-radius: 50px;
+}
+
+.process-dialog-chip-text {
+  position: absolute;
+  top: 1px;
+  left: 14px;
+  font-size: 12px;
+  font-weight: 400;
+  color: black;
+  text-align: right;
+}
+
+.process-dialog-note {
+  position: absolute;
+  left: 15px;
+  width: 692px;
+  height: 40px;
+  background: rgba(145, 158, 171, 0.16);
+  border-radius: 6px;
+}
+
+.process-dialog-note-text {
+  position: absolute;
+  top: 9px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #1c252e;
+  text-align: right;
+}
+
+.process-dialog-note-red .process-dialog-note-text {
+  left: 139px;
+}
+
+.process-dialog-note-green .process-dialog-note-text {
+  left: 64px;
+}
+
+.process-dialog-note-dot {
+  position: absolute;
+  top: 15px;
+  left: 671px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.process-dialog-note-red .process-dialog-note-dot {
+  background: #b71d18;
+}
+
+.process-dialog-note-green .process-dialog-note-dot {
+  background: #2a9a68;
+}
+
+.process-dialog-bg2 {
+  position: absolute;
+  top: 0;
+  left: 517px;
+  width: 205px;
+  height: 198px;
+  background: radial-gradient(
+    ellipse 102.71% 102.71% at 100% 0%,
+    rgba(0, 184, 217, 0.1) 0%,
+    rgba(0, 184, 217, 0) 100%
+  );
+}
+
+.process-dialog-header {
+  position: absolute;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  padding: 15px;
+}
+
+.process-dialog-close-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.process-dialog-close-bg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #637381;
+}
+
+.process-dialog-close-bar1,
+.process-dialog-close-bar2 {
+  position: absolute;
+  width: 8.5px;
+  height: 8.5px;
+  background: #637381;
+  border-radius: 20px;
+}
+
+.process-dialog-close-bar1 {
+  top: 6px;
+  left: 6px;
+}
+
+.process-dialog-close-bar2 {
+  top: 6px;
+  left: 14.5px;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.process-dialog-title {
+  text-align: right;
+}
+
+.process-dialog-title-bold {
+  color: #fa4616;
+  font-size: 14px;
+  font-family: "IRANSansWeb(FaNum)";
+  font-weight: 700;
+}
+
+.process-dialog-title-light {
+  color: #fa4616;
+  font-size: 14px;
+  font-family: "IRANSansWeb(FaNum)";
+  font-weight: 400;
+}

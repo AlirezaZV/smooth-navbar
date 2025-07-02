@@ -19,7 +19,7 @@ export default function BotsReport({ activeBot }) {
       .catch((err) => {
         navigate("/login");
       });
-  }, []);
+  }, [activeBot]);
 
   return (
     <div className="robots-reports-cards">
